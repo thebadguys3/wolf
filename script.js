@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
     typeEffect(
       questionText,
       "All of this was never meant to scare you.\n\n" +
-      "It was just my way of getting your attention—\n" +
+      "It was just my way of getting your attention\n" +
       "of slowing you down for a moment\n" +
       "and letting you know that you matter more than you probably realize.\n\n" +
       "I made this because I wanted to tell you something very important!!\n\n" +
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Step 2: type H2 heading
         typeEffect(
           valentineHeading,
-          "Will you be my Valentine? 💖",
+          "Will you be my Valentine? 🌹💕💖",
           null,
           null,
           null,
