@@ -19,7 +19,10 @@ typeEffect();
    Element References
 ================================ */
 const openBtn = document.getElementById("openBtn");
+const nextBtn = document.getElementById("nextBtn");
+
 const intro = document.getElementById("intro");
+const middle = document.getElementById("middle");
 const question = document.getElementById("question");
 const success = document.getElementById("success");
 
@@ -28,10 +31,18 @@ const noBtn = document.getElementById("noBtn");
 const hearts = document.querySelector(".hearts");
 
 /* ===============================
-   Open Envelope → Show Question
+   Open Envelope → Show Middle Card
 ================================ */
 openBtn.addEventListener("click", () => {
   intro.classList.add("hidden");
+  middle.classList.remove("hidden");
+});
+
+/* ===============================
+   Next Button → Show Question
+================================ */
+nextBtn.addEventListener("click", () => {
+  middle.classList.add("hidden");
   question.classList.remove("hidden");
   hearts.classList.remove("hidden"); // 💖 show hearts
 });
