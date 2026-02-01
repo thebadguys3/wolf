@@ -6,7 +6,6 @@
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(135deg, #000000); /* Intro card gradient */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,15 +39,9 @@ button {
   cursor: pointer;
 }
 
-#openBtn, #yesBtn {
-  background: #ff4d6d;
-  color: white;
-}
-
-#noBtn {
-  background: #ddd;
-}
-
+/* ===============================
+   Hearts Animation
+================================== */
 .hearts {
   position: fixed;
   top: 0;
@@ -80,11 +73,9 @@ button {
   100% { transform: translateY(-100%); }
 }
 
-#nextBtn, #suspenseNextBtn, #reassureNextBtn {
-  color: #fff;
-}
-
-/* Fade In */
+/* ===============================
+   Fade In Animation
+================================== */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
@@ -93,15 +84,12 @@ button {
 /* ===============================
    Subtle Card Animations
 ================================== */
-
-/* Pulse effect for suspense/reassurance */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.02); }
   100% { transform: scale(1); }
 }
 
-/* Shake effect for dramatic suspense */
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   20% { transform: translateX(-5px); }
@@ -110,52 +98,57 @@ button {
   80% { transform: translateX(3px); }
 }
 
-/* Zoom slightly for middle card */
 @keyframes zoom {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.03); }
 }
 
-/* Classes to trigger animations */
 .animate-middle { animation: zoom 2s ease-in-out infinite; }
 .animate-suspense { animation: shake 1.5s ease-in-out infinite, pulse 3s ease-in-out infinite; }
 .animate-reassure { animation: pulse 2.5s ease-in-out infinite; }
 
 /* ===============================
-   Card Colors
+   Card Backgrounds & Button Colors
 ================================== */
 
-/* Intro card keeps default gradient */
+/* Intro Card - Dramatic Grey */
 #intro {
-  background: white;
-  color: black;
+  background: #555555; /* grey */
+  color: white;
+}
+#openBtn {
+  background: #a80000; /* blood red */
+  color: white;
 }
 
 /* Middle Card - Mysterious */
 #middle {
   background: #2b0a3d;
-  color: #f0e6ff; /* light text */
+  color: #f0e6ff;
 }
 #nextBtn {
   background: #9b1c7c;
+  color: #fff;
 }
 
 /* Suspense Card - Dramatic */
 #suspense {
   background: #5c0a0a;
-  color: #ffdede; /* light text */
+  color: #ffdede;
 }
 #suspenseNextBtn {
   background: #a80000;
+  color: #fff;
 }
 
 /* Reassurance Card - Eerie Calm */
 #reassure {
   background: #0a3d3b;
-  color: #d0fff6; /* light text */
+  color: #d0fff6;
 }
 #reassureNextBtn {
   background: #1abc9c;
+  color: #fff;
 }
 
 /* Question Card */
@@ -168,4 +161,15 @@ button {
 #success {
   background: #ffe3e3;
   color: #d64545;
+}
+
+/* Default styling for yes/no buttons */
+#yesBtn {
+  background: #ff4d6d;
+  color: white;
+}
+
+#noBtn {
+  background: #ddd;
+  color: black;
 }
