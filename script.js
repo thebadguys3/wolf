@@ -100,7 +100,15 @@ document.addEventListener("DOMContentLoaded", () => {
     middle.classList.remove("hidden");
     typeEffect(
       middleText,
-      "I know this is wild 😅\n\nBut hear me out for just a second…",
+        "I know you’re probably freaking out right now.\n\n" +
+        "Seeing your name pop up like that wasn’t an accident. I know who you are.\n" +
+        "I know the little things, the way you smile when you’re excited, " +
+        "the way you pretend you’re not paying attention when you are,\n" +
+        "And times when you can't say no to people.\n\n" +
+        "And before you start panicking…\n" +
+        "no, this isn’t creepy.\n\n" +
+        "It’s intentional.\n\n" +
+        "Just keep going.",
       nextBtn,
       middle,
       "animate-middle"
