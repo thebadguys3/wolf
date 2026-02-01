@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
      Intro Card Typing
   ================================== */
-  const introText = "Hey Gia😁... I built something just for you:👀😉";
+  const introText = "Hey Gia... Welcome i have been waiting for you🤫 I have alot to tell you about yourself, click next and see what i have for you!!";
   typeEffect(typingElement, introText, openBtn, intro);
 
   /* ===============================
@@ -72,15 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     typeEffect(
       middleText,
-      "I know you’re probably freaking out right now.\n\n" +
-      "Seeing your name pop up like that wasn’t an accident. I know who you are.\n" +
-      "I know the little things, the way you smile when you’re excited, " +
-      "the way you pretend you’re not paying attention when you are,\n" +
-      "And times when you can't say no to people.\n\n" +
-      "And before you start panicking…\n" +
-      "no, this isn’t creepy.\n\n" +
-      "It’s intentional.\n\n" +
-      "Just keep going.",
+        "I know you’re probably freaking out right now.\n\n" +
+        "Seeing your name pop up like that wasn’t an accident. I know who you are.\n" +
+        "I know the little things, the way you smile when you’re excited, " +
+        "the way you pretend you’re not paying attention when you are,\n" +
+        "And times when you can't say no to people.\n\n" +
+        "And before you start panicking…\n" +
+        "no, this isn’t creepy.\n\n" +
+        "It’s intentional Gianttha!!\n\n" +
+        "Just keep going.",
       nextBtn,
       middle,
       "animate-middle"
@@ -96,21 +96,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     typeEffect(
       suspenseText,
-      "You’re still here.\n\n" +
-      "That means curiosity won.\n\n" +
-      "Good.\n\n" +
-      "Because this didn’t come together randomly.\n" +
-      "Every word, every click, every second you’ve spent here—\n" +
-      "planned.\n\n" +
-      "I knew you’d keep going.\n" +
-      "I knew you wouldn’t close it.\n\n" +
-      "You might be wondering how far this goes…\n" +
-      "what I know,\n" +
-      "what I noticed,\n" +
-      "and why you specifically ended up here.\n\n" +
-      "Don’t worry—\n" +
-      "you’re safe.\n\n" +
-      "But you are exactly where you’re supposed to be.",
+      "You’re still here Gia.\n\n" +
+        "That means curiosity won.\n\n" +
+        "Good!!.\n\n" +
+        "Because this didn’t come together randomly.\n" +
+        "Every word, every click, every second you’ve spent here on your phone\n" +
+        "is planned.\n\n" +
+        "I knew you’d keep going.\n" +
+        "I knew you wouldn’t close it.\n\n" +
+        "You might be wondering how far this goes…\n" +
+        "what I know,\n" +
+        "what I noticed,\n" +
+        "and why you specifically ended up here.\n\n" +
+        "Don’t worry\n" +
+        "you’re safe.\n\n" +
+        "But you are exactly where you’re supposed to be.",
       suspenseNextBtn,
       suspense,
       "animate-suspense"
@@ -127,15 +127,15 @@ document.addEventListener("DOMContentLoaded", () => {
     typeEffect(
       reassureText,
       "At this point you’re probably asking yourself a lot of questions.\n\n" +
-      "Who made this?\n" +
-      "Why me?\n" +
-      "Should I be concerned?\n\n" +
-      "Relax. Breathe Gia.\n\n" +
-      "Nothing bad is about to happen if you trust the process.\n\n" +
-      "In fact…\n" +
-      "something really nice might happen.\n\n" +
-      "This whole thing exists for one simple reason\n" +
-      "and you’re about to find out what it is.",
+        "Who made this?\n" +
+        "Why me?\n" +
+        "Should I be concerned?\n\n" +
+        "Relax. Breathe Gia.\n\n" +
+        "Nothing bad is about to happen if you trust the process.\n\n" +
+        "In fact…\n" +
+        "something really nice might happen.\n\n" +
+        "This whole thing exists for one simple reason\n" +
+        "and you’re about to find out what it is.",
       reassureNextBtn,
       reassure,
       "animate-reassure"
