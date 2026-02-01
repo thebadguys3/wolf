@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "And times when you can't say no to people.\n\n" +
         "And before you start panicking…\n" +
         "no, this isn’t creepy.\n\n" +
-        "It’s intentional.\n\n" +
+        "It’s intentional. Gianttha\n\n" +
         "Just keep going.",
       nextBtn,
       middle,
@@ -123,7 +123,21 @@ document.addEventListener("DOMContentLoaded", () => {
     suspense.classList.remove("hidden");
     typeEffect(
       suspenseText,
-      "You’re still here. That means curiosity won. 😏\n\nEvery word, every click, every second you’ve spent here—planned.\n\nYou might be wondering how far this goes, what I know, and why you’re here.\n\nDon’t worry—you’re exactly where you’re supposed to be.",
+        "You’re still here Gia.\n\n" +
+        "That means curiosity won.\n\n" +
+        "Good!!.\n\n" +
+        "Because this didn’t come together randomly.\n" +
+        "Every word, every click, every second you’ve spent here on your phone\n" +
+        "is planned.\n\n" +
+        "I knew you’d keep going.\n" +
+        "I knew you wouldn’t close it.\n\n" +
+        "You might be wondering how far this goes…\n" +
+        "what I know,\n" +
+        "what I noticed,\n" +
+        "and why you specifically ended up here.\n\n" +
+        "Don’t worry\n" +
+        "you’re safe.\n\n" +
+        "But you are exactly where you’re supposed to be.",
       suspenseNextBtn,
       suspense,
       "animate-suspense"
