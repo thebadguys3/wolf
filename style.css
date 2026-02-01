@@ -87,6 +87,10 @@ button {
   position: relative;
   z-index: 1;
 }
+#nextBtn {
+  background: #ff4d6d;
+  color: white;
+}
 
 
 @keyframes fadeIn {
