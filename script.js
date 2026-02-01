@@ -19,11 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (char === "." || char === "!" || char === "?") delay = 400;
         if (char === "," || char === ";") delay = 200;
         if (char === "\n") delay = 400;
-        if (/[\u{1F600}-\u{1F64F}]/u.test(char)) delay = 500; // emoji pause
+        if (/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}]/u.test(char)) delay = 500; // emoji pause
 
         setTimeout(type, delay);
       } else {
-        if (nextBtn) nextBtn.disabled = True;
+        if (nextBtn) nextBtn.disabled = false;
         if (callback) callback();
       }
     }
@@ -33,36 +33,35 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ===============================
-   Element References
-================================== */
-const intro = document.getElementById("intro");
-const middle = document.getElementById("middle");
-const suspense = document.getElementById("suspense");
-const reassure = document.getElementById("reassure");
-const question = document.getElementById("question");
-const success = document.getElementById("success");
+     Element References
+  ================================== */
+  const intro = document.getElementById("intro");
+  const middle = document.getElementById("middle");
+  const suspense = document.getElementById("suspense");
+  const reassure = document.getElementById("reassure");
+  const question = document.getElementById("question");
+  const success = document.getElementById("success");
 
-const typingElement = document.getElementById("typing");
-const middleText = document.getElementById("middleText");
-const suspenseText = document.getElementById("suspenseText");
-const reassureText = document.getElementById("reassureText");
-const questionText = document.getElementById("questionText");
-const valentineHeading = document.getElementById("valentineQuestion");
-const step3Text = document.getElementById("step3Text"); // <-- Make sure this exists
+  const typingElement = document.getElementById("typing");
+  const middleText = document.getElementById("middleText");
+  const suspenseText = document.getElementById("suspenseText");
+  const reassureText = document.getElementById("reassureText");
+  const questionText = document.getElementById("questionText");
+  const valentineHeading = document.getElementById("valentineQuestion");
+  const step3Text = document.getElementById("step3Text");
 
-const openBtn = document.getElementById("openBtn");
-const nextBtn = document.getElementById("nextBtn");
-const suspenseNextBtn = document.getElementById("suspenseNextBtn");
-const reassureNextBtn = document.getElementById("reassureNextBtn");
-const yesBtn = document.getElementById("yesBtn");
-const noBtn = document.getElementById("noBtn");
-const hearts = document.querySelector(".hearts");
-
+  const openBtn = document.getElementById("openBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const suspenseNextBtn = document.getElementById("suspenseNextBtn");
+  const reassureNextBtn = document.getElementById("reassureNextBtn");
+  const yesBtn = document.getElementById("yesBtn");
+  const noBtn = document.getElementById("noBtn");
+  const hearts = document.querySelector(".hearts");
 
   /* ===============================
      Intro Card Typing
   ================================== */
-  const introText = "Hey Gia... Welcome i have been waiting for you🤫 I have alot to tell you about yourself, click next and see what i have for you!!";
+  const introText = "Hey Gia... Welcome i have been waiting for you🤫 I have a lot to tell you about yourself, click next and see what I have for you!!";
   typeEffect(typingElement, introText, openBtn, intro);
 
   /* ===============================
@@ -74,15 +73,15 @@ const hearts = document.querySelector(".hearts");
 
     typeEffect(
       middleText,
-        "I know you’re probably freaking out right now.\n\n" +
-        "Seeing your name pop up like that wasn’t an accident. I know who you are.\n" +
-        "I know the little things, the way you smile when you’re excited, " +
-        "the way you pretend you’re not paying attention when you are,\n" +
-        "And times when you can't say no to people.\n\n" +
-        "And before you start panicking…\n" +
-        "no, this isn’t creepy.\n\n" +
-        "It’s intentional Gianttha!!\n\n" +
-        "Just keep going.",
+      "I know you’re probably freaking out right now.\n\n" +
+      "Seeing your name pop up like that wasn’t an accident. I know who you are.\n" +
+      "I know the little things, the way you smile when you’re excited, " +
+      "the way you pretend you’re not paying attention when you are,\n" +
+      "And times when you can't say no to people.\n\n" +
+      "And before you start panicking…\n" +
+      "no, this isn’t creepy.\n\n" +
+      "It’s intentional Gianttha!!\n\n" +
+      "Just keep going.",
       nextBtn,
       middle,
       "animate-middle"
@@ -99,20 +98,20 @@ const hearts = document.querySelector(".hearts");
     typeEffect(
       suspenseText,
       "You’re still here Gia.\n\n" +
-        "That means curiosity won.\n\n" +
-        "Good!!.\n\n" +
-        "Because this didn’t come together randomly.\n" +
-        "Every word, every click, every second you’ve spent here on your phone\n" +
-        "is planned.\n\n" +
-        "I knew you’d keep going.\n" +
-        "I knew you wouldn’t close it.\n\n" +
-        "You might be wondering how far this goes…\n" +
-        "what I know,\n" +
-        "what I noticed,\n" +
-        "and why you specifically ended up here.\n\n" +
-        "Don’t worry\n" +
-        "you’re safe.\n\n" +
-        "But you are exactly where you’re supposed to be.",
+      "That means curiosity won.\n\n" +
+      "Good!!\n\n" +
+      "Because this didn’t come together randomly.\n" +
+      "Every word, every click, every second you’ve spent here on your phone\n" +
+      "is planned.\n\n" +
+      "I knew you’d keep going.\n" +
+      "I knew you wouldn’t close it.\n\n" +
+      "You might be wondering how far this goes…\n" +
+      "what I know,\n" +
+      "what I noticed,\n" +
+      "and why you specifically ended up here.\n\n" +
+      "Don’t worry\n" +
+      "you’re safe.\n\n" +
+      "But you are exactly where you’re supposed to be.",
       suspenseNextBtn,
       suspense,
       "animate-suspense"
@@ -129,15 +128,15 @@ const hearts = document.querySelector(".hearts");
     typeEffect(
       reassureText,
       "At this point you’re probably asking yourself a lot of questions.\n\n" +
-        "Who made this?\n" +
-        "Why me?\n" +
-        "Should I be concerned?\n\n" +
-        "Relax. Breathe Gia.\n\n" +
-        "Nothing bad is about to happen if you trust the process.\n\n" +
-        "In fact…\n" +
-        "something really nice might happen.\n\n" +
-        "This whole thing exists for one simple reason\n" +
-        "and you’re about to find out what it is.",
+      "Who made this?\n" +
+      "Why me?\n" +
+      "Should I be concerned?\n\n" +
+      "Relax. Breathe Gia.\n\n" +
+      "Nothing bad is about to happen if you trust the process.\n\n" +
+      "In fact…\n" +
+      "something really nice might happen.\n\n" +
+      "This whole thing exists for one simple reason\n" +
+      "and you’re about to find out what it is.",
       reassureNextBtn,
       reassure,
       "animate-reassure"
@@ -145,52 +144,50 @@ const hearts = document.querySelector(".hearts");
   });
 
   /* ===============================
-   Reassurance → Question Card
-================================== */
-reassureNextBtn.addEventListener("click", () => {
-  reassure.classList.add("hidden");
-  question.classList.remove("hidden");
-  hearts.classList.add("hidden"); // hide hearts until Yes clicked
+     Reassurance → Question Card
+  ================================== */
+  reassureNextBtn.addEventListener("click", () => {
+    reassure.classList.add("hidden");
+    question.classList.remove("hidden");
 
-  valentineHeading.textContent = "";
-  step3Text.classList.add("hidden"); // hide initially
+    valentineHeading.textContent = "";
+    step3Text.textContent = "";
+    step3Text.classList.add("hidden"); // hide initially
+    hearts.classList.add("hidden"); // hearts only after Yes clicked
 
-  // Step 1: type paragraph
-  typeEffect(
-    questionText,
-    "All of this was never meant to scare you.\n\n" +
-    "It was just my way of getting your attention—\n" +
-    "of slowing you down for a moment\n" +
-    "and letting you know that you matter more than you probably realize.\n\n" +
-    "I made this because I wanted to tell you something very important!!\n\n" +
-    "And because I was hoping you’d say yes to one simple thing....",
-    null,
-    question,
-    null,
-    () => {
-      // Step 2: type h2 heading
-      typeEffect(
-        valentineHeading,
-        "Will you be my Valentine? 💖",
-        null,
-        null,
-        null,
-        () => {
-          // Step 3: type the new paragraph
-          step3Text.classList.remove("hidden"); // show paragraph
-          typeEffect(
-            step3Text,
-            "I know it’s your sister’s wedding on that day… 💍",
-            null,
-            null,
-            null,
-            null
-          );
-        }
-      );
-    }
-  );
-});
+    // Step 1: type main paragraph
+    typeEffect(
+      questionText,
+      "All of this was never meant to scare you.\n\n" +
+      "It was just my way of getting your attention—\n" +
+      "of slowing you down for a moment\n" +
+      "and letting you know that you matter more than you probably realize.\n\n" +
+      "I made this because I wanted to tell you something very important!!\n\n" +
+      "And because I was hoping you’d say yes to one simple thing....",
+      null,
+      question,
+      null,
+      () => {
+        // Step 2: type H2 heading
+        typeEffect(
+          valentineHeading,
+          "Will you be my Valentine? 💖",
+          null,
+          null,
+          null,
+          () => {
+            // Step 3: type small paragraph
+            step3Text.classList.remove("hidden");
+            typeEffect(
+              step3Text,
+              "I know it’s your sister’s wedding on that day… 💍"
+            );
+          }
+        );
+      }
+    );
+  });
+
   /* ===============================
      NO Button Runs Away
   ================================== */
@@ -204,7 +201,7 @@ reassureNextBtn.addEventListener("click", () => {
      YES Button → Success + Confetti
   ================================== */
   yesBtn.addEventListener("click", () => {
-    hearts.classList.add("hidden");
+    hearts.classList.remove("hidden");
     question.classList.add("hidden");
     success.classList.remove("hidden");
     launchConfetti();
