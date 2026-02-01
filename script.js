@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(type, delay);
       } else {
-        if (nextBtn) nextBtn.disabled = false;
+        if (nextBtn) nextBtn.disabled = True;
         if (callback) callback();
       }
     }
