@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
      Typing Effect (Intro)
   ================================== */
-  const typingText = "Hey... I built something just for you";
+  const typingText = "Hey Gia😁... I built something just for you:👀😉";
   const typingElement = document.getElementById("typing");
   let typingIndex = 0;
 
