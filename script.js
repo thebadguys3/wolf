@@ -3,25 +3,31 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
      Human-like Typing Effect Function
   ================================== */
-  function typeEffect(element, text) {
+  function typeEffect(element, text, nextButton = null) {
     element.textContent = ""; // clear previous text
     let index = 0;
 
+    // Disable next button while typing
+    if (nextButton) nextButton.disabled = true;
+    
     function type() {
       if (index < text.length) {
         element.textContent += text.charAt(index);
         index++;
 
-        // Add human-like pauses
+        // Human-like pauses
         let delay = 40; // base typing speed
-
         const char = text.charAt(index - 1);
-        if (char === "." || char === "!" || char === "?") delay = 400; // long pause after sentences
-        else if (char === "," || char === "—") delay = 200; // medium pause for commas
-        else if (char === "\n") delay = 300; // pause for line breaks
-        else if (/[\u{1F600}-\u{1F64F}]/u.test(char)) delay = 500; // pause for emojis
+
+        if (char === "." || char === "!" || char === "?") delay = 400; // sentence end
+        else if (char === "," || char === "—") delay = 200; // comma / dash
+        else if (char === "\n") delay = 300; // line break
+        else if (/[\u{1F600}-\u{1F64F}]/u.test(char)) delay = 500; // emoji pause
 
         setTimeout(type, delay);
+      } else {
+        // Enable next button when typing is done
+        if (nextButton) nextButton.disabled = false;
       }
     }
 
@@ -85,7 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
     middle.classList.remove("hidden");
     typeEffect(
       middleText,
-      "I know this is wild 😅\n\nBut hear me out for just a second…"
+      "I know this is wild 😅\n\nBut hear me out for just a second…",
+      nextBtn
     );
   });
 
@@ -97,7 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
     suspense.classList.remove("hidden");
     typeEffect(
       suspenseText,
-      "You’re still here. That means curiosity won. 😏\n\nEvery word, every click, every second you’ve spent here—planned.\n\nYou might be wondering how far this goes, what I know, and why you’re here.\n\nDon’t worry—you’re exactly where you’re supposed to be."
+      "You’re still here. That means curiosity won. 😏\n\nEvery word, every click, every second you’ve spent here—planned.\n\nYou might be wondering how far this goes, what I know, and why you’re here.\n\nDon’t worry—you’re exactly where you’re supposed to be.",
+      suspenseNextBtn
     );
   });
 
@@ -109,7 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
     reassure.classList.remove("hidden");
     typeEffect(
       reassureText,
-      "Please don’t worry, you are safe with me 💖\n\nJust click next and you’ll see…"
+      "Please don’t worry, you are safe with me 💖\n\nJust click next and you’ll see…",
+      reassureNextBtn
     );
   });
 
