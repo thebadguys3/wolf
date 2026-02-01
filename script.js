@@ -58,6 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const noBtn = document.getElementById("noBtn");
   const hearts = document.querySelector(".hearts");
 
+  // Hide Yes/No buttons initially
+  yesBtn.style.display = "none";
+  noBtn.style.display = "none";
+
   /* ===============================
      Intro Card Typing
   ================================== */
@@ -153,7 +157,9 @@ document.addEventListener("DOMContentLoaded", () => {
     valentineHeading.textContent = "";
     step3Text.textContent = "";
     step3Text.classList.add("hidden"); // hide initially
-    hearts.classList.add("hidden"); // hearts only after Yes clicked
+    hearts.classList.add("hidden"); // hide hearts initially
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
 
     // Step 1: type main paragraph
     typeEffect(
@@ -180,7 +186,16 @@ document.addEventListener("DOMContentLoaded", () => {
             step3Text.classList.remove("hidden");
             typeEffect(
               step3Text,
-              "I know it’s your sister’s wedding on that day… 💍"
+              "I know it’s your sister’s wedding on that day… 💍",
+              null,
+              null,
+              null,
+              () => {
+                // Show Yes/No buttons only after Step 3 finishes typing
+                yesBtn.style.display = "inline-block";
+                noBtn.style.display = "inline-block";
+                hearts.classList.remove("hidden"); // show hearts now
+              }
             );
           }
         );
@@ -201,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
      YES Button → Success + Confetti
   ================================== */
   yesBtn.addEventListener("click", () => {
-    hearts.classList.remove("hidden");
+    hearts.classList.add("hidden");
     question.classList.add("hidden");
     success.classList.remove("hidden");
     launchConfetti();
