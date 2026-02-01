@@ -143,35 +143,52 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ===============================
-     Reassurance → Question Card
-  ================================== */
-  reassureNextBtn.addEventListener("click", () => {
-    reassure.classList.add("hidden");
-    question.classList.remove("hidden");
-    hearts.classList.remove("hidden");
+   Reassurance → Question Card
+================================== */
+reassureNextBtn.addEventListener("click", () => {
+  reassure.classList.add("hidden");
+  question.classList.remove("hidden");
+  hearts.classList.add("hidden"); // hide hearts until Yes clicked
 
-    valentineHeading.textContent = "";
+  valentineHeading.textContent = "";
+  step3Text.classList.add("hidden"); // hide initially
 
-    // Step 1: type paragraph
-    typeEffect(
-      questionText,
-      "All of this was never meant to scare you.\n\n" +
-      "It was just my way of getting your attention—\n" +
-      "of slowing you down for a moment\n" +
-      "and letting you know that you matter more than you probably realize.\n\n" +
-      "I made this because I wanted to tell you something very important!!\n\n" +
-      "And because I was hoping you’d say yes to one simple thing....",
-      null,
-      question,
-      null,
-      () => {
-        // Step 2: type h2 heading after paragraph finishes
-        typeEffect(valentineHeading, "Will you be my Valentine? 💖");
-        launchConfetti(); // start confetti immediately while heading types
-      }
-    );
-  });
-
+  // Step 1: type paragraph
+  typeEffect(
+    questionText,
+    "All of this was never meant to scare you.\n\n" +
+    "It was just my way of getting your attention—\n" +
+    "of slowing you down for a moment\n" +
+    "and letting you know that you matter more than you probably realize.\n\n" +
+    "I made this because I wanted to tell you something very important!!\n\n" +
+    "And because I was hoping you’d say yes to one simple thing....",
+    null,
+    question,
+    null,
+    () => {
+      // Step 2: type h2 heading
+      typeEffect(
+        valentineHeading,
+        "Will you be my Valentine? 💖",
+        null,
+        null,
+        null,
+        () => {
+          // Step 3: type the new paragraph
+          step3Text.classList.remove("hidden"); // show paragraph
+          typeEffect(
+            step3Text,
+            "I know it’s your sister’s wedding on that day… 💍",
+            null,
+            null,
+            null,
+            null
+          );
+        }
+      );
+    }
+  );
+});
   /* ===============================
      NO Button Runs Away
   ================================== */
