@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "And times when you can't say no to people.\n\n" +
         "And before you start panicking…\n" +
         "no, this isn’t creepy.\n\n" +
-        "It’s intentional. Gianttha\n\n" +
+        "It’s intentional Gianttha!!\n\n" +
         "Just keep going.",
       nextBtn,
       middle,
@@ -152,7 +152,16 @@ document.addEventListener("DOMContentLoaded", () => {
     reassure.classList.remove("hidden");
     typeEffect(
       reassureText,
-      "Please don’t worry, you are safe with me 💖\n\nJust click next and you’ll see…",
+        "At this point you’re probably asking yourself a lot of questions.\n\n" +
+        "Who made this?\n" +
+        "Why me?\n" +
+        "Should I be concerned?\n\n" +
+        "Relax. Breathe Gia.\n\n" +
+        "Nothing bad is about to happen if you trust the process.\n\n" +
+        "In fact…\n" +
+        "something really nice might happen.\n\n" +
+        "This whole thing exists for one simple reason\n" +
+        "and you’re about to find out what it is.",
       reassureNextBtn,
       reassure,
       "animate-reassure"
