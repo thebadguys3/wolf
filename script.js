@@ -120,21 +120,23 @@ document.addEventListener("DOMContentLoaded", () => {
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
   });
 
-  /* ===============================
-     YES Button → Success + Confetti + Typing
-  ================================== */
-  yesBtn.addEventListener("click", () => {
-    hearts.classList.add("hidden");
-    question.classList.add("hidden");
-    success.classList.remove("hidden");
+ /* ===============================
+   YES Button → Success + Confetti + Typing
+================================== */
+yesBtn.addEventListener("click", () => {
+  hearts.classList.add("hidden");
+  question.classList.add("hidden");
+  success.classList.remove("hidden");
 
-    typeEffect(
-      successText,
-      "I was really hoping you’d say yes 💘\n\nHappy Valentine’s 💖",
-      launchConfetti
-    );
-  });
+  // Start confetti immediately
+  launchConfetti();
 
+  // Start typing the success text
+  typeEffect(
+    successText,
+    "I was really hoping you’d say yes 💘\n\nHappy Valentine’s 💖"
+  );
+});
   /* ===============================
      Confetti Function
   ================================== */
