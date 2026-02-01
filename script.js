@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ===============================
-     Typing Effect Function
+     Human-like Typing Effect Function
   ================================== */
-  function typeEffect(element, text, callback) {
+  function typeEffect(element, text) {
     element.textContent = ""; // clear previous text
     let index = 0;
 
@@ -11,9 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
       if (index < text.length) {
         element.textContent += text.charAt(index);
         index++;
-        setTimeout(type, 40); // typing speed
-      } else if (callback) {
-        callback();
+
+        // Add human-like pauses
+        let delay = 40; // base typing speed
+
+        const char = text.charAt(index - 1);
+        if (char === "." || char === "!" || char === "?") delay = 400; // long pause after sentences
+        else if (char === "," || char === "—") delay = 200; // medium pause for commas
+        else if (char === "\n") delay = 300; // pause for line breaks
+        else if (/[\u{1F600}-\u{1F64F}]/u.test(char)) delay = 500; // pause for emojis
+
+        setTimeout(type, delay);
       }
     }
 
@@ -31,7 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typingIndex < typingText.length) {
       typingElement.textContent += typingText.charAt(typingIndex);
       typingIndex++;
-      setTimeout(typeIntro, 80);
+
+      // Simple pauses for intro
+      let delay = 80;
+      const char = typingText.charAt(typingIndex - 1);
+      if (char === "." || char === "!") delay = 400;
+      else if (char === ",") delay = 200;
+
+      setTimeout(typeIntro, delay);
     }
   }
 
@@ -120,23 +135,24 @@ document.addEventListener("DOMContentLoaded", () => {
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
   });
 
- /* ===============================
-   YES Button → Success + Confetti + Typing
-================================== */
-yesBtn.addEventListener("click", () => {
-  hearts.classList.add("hidden");
-  question.classList.add("hidden");
-  success.classList.remove("hidden");
+  /* ===============================
+     YES Button → Success + Confetti + Typing
+  ================================== */
+  yesBtn.addEventListener("click", () => {
+    hearts.classList.add("hidden");
+    question.classList.add("hidden");
+    success.classList.remove("hidden");
 
-  // Start confetti immediately
-  launchConfetti();
+    // Launch confetti immediately
+    launchConfetti();
 
-  // Start typing the success text
-  typeEffect(
-    successText,
-    "I was really hoping you’d say yes 💘\n\nHappy Valentine’s 💖"
-  );
-});
+    // Start human-like typing for success
+    typeEffect(
+      successText,
+      "I was really hoping you’d say yes 💘\n\nHappy Valentine’s 💖"
+    );
+  });
+
   /* ===============================
      Confetti Function
   ================================== */
