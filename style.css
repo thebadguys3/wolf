@@ -24,6 +24,8 @@ body {
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
   animation: fadeIn 0.8s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .hidden {
@@ -47,6 +49,7 @@ button {
 #noBtn {
   background: #ddd;
 }
+
 .hearts {
   position: fixed;
   top: 0;
@@ -74,26 +77,48 @@ button {
 }
 
 @keyframes float {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(-100%); }
 }
 
-/* Make sure card content stays above hearts */
-.card {
-  position: relative;
-  z-index: 1;
-}
-#nextBtn {
+#nextBtn, #suspenseNextBtn, #reassureNextBtn {
   background: #ff4d6d;
   color: white;
 }
 
-
+/* Fade In */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
+
+/* ===============================
+   Subtle Card Animations
+================================== */
+
+/* Pulse effect for suspense/reassurance */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Shake effect for dramatic suspense */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
+/* Zoom slightly for middle card */
+@keyframes zoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+/* Classes to trigger animations */
+.animate-middle { animation: zoom 2s ease-in-out infinite; }
+.animate-suspense { animation: shake 1.5s ease-in-out infinite, pulse 3s ease-in-out infinite; }
+.animate-reassure { animation: pulse 2.5s ease-in-out infinite; }
