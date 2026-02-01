@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
      Typing Effect for Intro
   ================================== */
-  const typingText = "Hey Gia😁... I built something just for you:👀😉";
+  const typingText = "Hey Gia... Welcome i have been waiting for you🤫 I have alot to tell you about yourself, click next and see what i have for you!!";
   const typingElement = document.getElementById("typing");
   let typingIndex = 0;
 
