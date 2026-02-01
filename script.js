@@ -3,31 +3,41 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ===============================
      Human-like Typing Effect Function
   ================================== */
-  function typeEffect(element, text, nextButton = null) {
+  function typeEffect(element, text, nextButton = null, cardElement = null, animationClass = null) {
     element.textContent = ""; // clear previous text
     let index = 0;
 
     // Disable next button while typing
     if (nextButton) nextButton.disabled = true;
-    
+
+    // Add animation class if provided
+    if (cardElement && animationClass) {
+      cardElement.classList.add(animationClass);
+    }
+
     function type() {
       if (index < text.length) {
         element.textContent += text.charAt(index);
         index++;
 
         // Human-like pauses
-        let delay = 40; // base typing speed
+        let delay = 40;
         const char = text.charAt(index - 1);
 
-        if (char === "." || char === "!" || char === "?") delay = 400; // sentence end
-        else if (char === "," || char === "—") delay = 200; // comma / dash
-        else if (char === "\n") delay = 300; // line break
+        if (char === "." || char === "!" || char === "?") delay = 400;
+        else if (char === "," || char === "—") delay = 200;
+        else if (char === "\n") delay = 300;
         else if (/[\u{1F600}-\u{1F64F}]/u.test(char)) delay = 500; // emoji pause
 
         setTimeout(type, delay);
       } else {
         // Enable next button when typing is done
         if (nextButton) nextButton.disabled = false;
+
+        // Remove animation class when typing finishes
+        if (cardElement && animationClass) {
+          cardElement.classList.remove(animationClass);
+        }
       }
     }
 
@@ -46,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
       typingElement.textContent += typingText.charAt(typingIndex);
       typingIndex++;
 
-      // Simple pauses for intro
       let delay = 80;
       const char = typingText.charAt(typingIndex - 1);
       if (char === "." || char === "!") delay = 400;
@@ -92,7 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
     typeEffect(
       middleText,
       "I know this is wild 😅\n\nBut hear me out for just a second…",
-      nextBtn
+      nextBtn,
+      middle,
+      "animate-middle"
     );
   });
 
@@ -105,7 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
     typeEffect(
       suspenseText,
       "You’re still here. That means curiosity won. 😏\n\nEvery word, every click, every second you’ve spent here—planned.\n\nYou might be wondering how far this goes, what I know, and why you’re here.\n\nDon’t worry—you’re exactly where you’re supposed to be.",
-      suspenseNextBtn
+      suspenseNextBtn,
+      suspense,
+      "animate-suspense"
     );
   });
 
@@ -118,7 +131,9 @@ document.addEventListener("DOMContentLoaded", () => {
     typeEffect(
       reassureText,
       "Please don’t worry, you are safe with me 💖\n\nJust click next and you’ll see…",
-      reassureNextBtn
+      reassureNextBtn,
+      reassure,
+      "animate-reassure"
     );
   });
 
