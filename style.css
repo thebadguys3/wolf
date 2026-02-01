@@ -6,6 +6,7 @@
 body {
   margin: 0;
   height: 100vh;
+  background: linear-gradient(135deg, #000000); /* Intro card gradient */
   display: flex;
   justify-content: center;
   align-items: center;
