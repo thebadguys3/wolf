@@ -21,9 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
   ================================== */
   const openBtn = document.getElementById("openBtn");
   const nextBtn = document.getElementById("nextBtn");
+  const reassureNextBtn = document.getElementById("reassureNextBtn"); // NEW
 
   const intro = document.getElementById("intro");
   const middle = document.getElementById("middle");
+  const reassure = document.getElementById("reassure"); // NEW
   const question = document.getElementById("question");
   const success = document.getElementById("success");
 
@@ -40,10 +42,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ===============================
-     Next Button → Show Question Card
+     Middle Next → Show Reassurance Card
   ================================== */
   nextBtn.addEventListener("click", () => {
     middle.classList.add("hidden");
+    reassure.classList.remove("hidden");
+  });
+
+  /* ===============================
+     Reassurance Next → Show Question + Hearts
+  ================================== */
+  reassureNextBtn.addEventListener("click", () => {
+    reassure.classList.add("hidden");
     question.classList.remove("hidden");
     hearts.classList.remove("hidden");
   });
