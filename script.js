@@ -21,13 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
   ================================== */
   const openBtn = document.getElementById("openBtn");
   const nextBtn = document.getElementById("nextBtn");
-  const reassureNextBtn = document.getElementById("reassureNextBtn"); // NEW
+  const reassureNextBtn = document.getElementById("reassureNextBtn");
 
   const intro = document.getElementById("intro");
   const middle = document.getElementById("middle");
-  const reassure = document.getElementById("reassure"); // NEW
+  const suspense = document.getElementById("suspense"); // NEW
+  const reassure = document.getElementById("reassure");
   const question = document.getElementById("question");
   const success = document.getElementById("success");
+
+  const suspenseNextBtn = document.getElementById("suspenseNextBtn"); // NEW
 
   const yesBtn = document.getElementById("yesBtn");
   const noBtn = document.getElementById("noBtn");
@@ -42,10 +45,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ===============================
-     Middle Next → Show Reassurance Card
+     Middle Next → Show Suspense Card (New)
   ================================== */
   nextBtn.addEventListener("click", () => {
     middle.classList.add("hidden");
+    suspense.classList.remove("hidden");
+  });
+
+  /* ===============================
+     Suspense Next → Show Reassurance Card
+  ================================== */
+  suspenseNextBtn.addEventListener("click", () => {
+    suspense.classList.add("hidden");
     reassure.classList.remove("hidden");
   });
 
