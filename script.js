@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Step 2: type H2 heading
         typeEffect(
           valentineHeading,
-          "Will you be my Valentine? 🌹💕💖",
+          "Will you be my Valentine? 🌹💕♥💘❤",
           null,
           null,
           null,
