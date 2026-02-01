@@ -6,7 +6,7 @@
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Intro card gradient */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,6 @@ body {
 }
 
 .card {
-  background: white;
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
@@ -82,8 +81,7 @@ button {
 }
 
 #nextBtn, #suspenseNextBtn, #reassureNextBtn {
-  background: #ff4d6d;
-  color: white;
+  color: #fff;
 }
 
 /* Fade In */
@@ -122,3 +120,52 @@ button {
 .animate-middle { animation: zoom 2s ease-in-out infinite; }
 .animate-suspense { animation: shake 1.5s ease-in-out infinite, pulse 3s ease-in-out infinite; }
 .animate-reassure { animation: pulse 2.5s ease-in-out infinite; }
+
+/* ===============================
+   Card Colors
+================================== */
+
+/* Intro card keeps default gradient */
+#intro {
+  background: white;
+  color: black;
+}
+
+/* Middle Card - Mysterious */
+#middle {
+  background: #2b0a3d;
+  color: #f0e6ff; /* light text */
+}
+#nextBtn {
+  background: #9b1c7c;
+}
+
+/* Suspense Card - Dramatic */
+#suspense {
+  background: #5c0a0a;
+  color: #ffdede; /* light text */
+}
+#suspenseNextBtn {
+  background: #a80000;
+}
+
+/* Reassurance Card - Eerie Calm */
+#reassure {
+  background: #0a3d3b;
+  color: #d0fff6; /* light text */
+}
+#reassureNextBtn {
+  background: #1abc9c;
+}
+
+/* Question Card */
+#question {
+  background: white;
+  color: black;
+}
+
+/* Success Card */
+#success {
+  background: #ffe3e3;
+  color: #d64545;
+}
