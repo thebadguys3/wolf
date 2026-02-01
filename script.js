@@ -33,29 +33,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ===============================
-     Element References
-  ================================== */
-  const intro = document.getElementById("intro");
-  const middle = document.getElementById("middle");
-  const suspense = document.getElementById("suspense");
-  const reassure = document.getElementById("reassure");
-  const question = document.getElementById("question");
-  const success = document.getElementById("success");
+   Element References
+================================== */
+const intro = document.getElementById("intro");
+const middle = document.getElementById("middle");
+const suspense = document.getElementById("suspense");
+const reassure = document.getElementById("reassure");
+const question = document.getElementById("question");
+const success = document.getElementById("success");
 
-  const typingElement = document.getElementById("typing");
-  const middleText = document.getElementById("middleText");
-  const suspenseText = document.getElementById("suspenseText");
-  const reassureText = document.getElementById("reassureText");
-  const questionText = document.getElementById("questionText");
-  const valentineHeading = document.getElementById("valentineQuestion");
+const typingElement = document.getElementById("typing");
+const middleText = document.getElementById("middleText");
+const suspenseText = document.getElementById("suspenseText");
+const reassureText = document.getElementById("reassureText");
+const questionText = document.getElementById("questionText");
+const valentineHeading = document.getElementById("valentineQuestion");
+const step3Text = document.getElementById("step3Text"); // <-- Make sure this exists
 
-  const openBtn = document.getElementById("openBtn");
-  const nextBtn = document.getElementById("nextBtn");
-  const suspenseNextBtn = document.getElementById("suspenseNextBtn");
-  const reassureNextBtn = document.getElementById("reassureNextBtn");
-  const yesBtn = document.getElementById("yesBtn");
-  const noBtn = document.getElementById("noBtn");
-  const hearts = document.querySelector(".hearts");
+const openBtn = document.getElementById("openBtn");
+const nextBtn = document.getElementById("nextBtn");
+const suspenseNextBtn = document.getElementById("suspenseNextBtn");
+const reassureNextBtn = document.getElementById("reassureNextBtn");
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const hearts = document.querySelector(".hearts");
+
 
   /* ===============================
      Intro Card Typing
