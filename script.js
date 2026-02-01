@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   /* ===============================
      Typing Effect Function
   ================================== */
@@ -55,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const suspenseText = document.getElementById("suspenseText");
   const reassureText = document.getElementById("reassureText");
   const questionText = document.getElementById("questionText");
+  const successText = document.getElementById("successText");
 
   const yesBtn = document.getElementById("yesBtn");
   const noBtn = document.getElementById("noBtn");
@@ -119,13 +121,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ===============================
-     YES Button → Success + Confetti
+     YES Button → Success + Confetti + Typing
   ================================== */
   yesBtn.addEventListener("click", () => {
     hearts.classList.add("hidden");
     question.classList.add("hidden");
     success.classList.remove("hidden");
-    launchConfetti();
+
+    typeEffect(
+      successText,
+      "I was really hoping you’d say yes 💘\n\nHappy Valentine’s 💖",
+      launchConfetti
+    );
   });
 
   /* ===============================
@@ -147,4 +154,5 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })();
   }
+
 });
