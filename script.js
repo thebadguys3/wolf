@@ -1,4 +1,4 @@
-const typingText = "Heyy Honey(Gia) I built something just for you 💖😉";
+const typingText = "Heyy Gia I built something just for you 👀😉";
 const typingElement = document.getElementById("typing");
 let index = 0;
 
