@@ -168,18 +168,42 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
-  /* ===============================
-     Reassurance → Question Card
-  ================================== */
-  reassureNextBtn.addEventListener("click", () => {
-    reassure.classList.add("hidden");
-    question.classList.remove("hidden");
-    hearts.classList.remove("hidden");
-    typeEffect(
-      questionText,
-      "I know this is a little silly 😅\n\nBut I wanted to ask you in a way that’s very *me*…"
-    );
-  });
+ /* ===============================
+   Reassurance → Question Card
+================================== */
+reassureNextBtn.addEventListener("click", () => {
+  reassure.classList.add("hidden");
+  question.classList.remove("hidden");
+  hearts.classList.remove("hidden");
+
+  const valentineHeading = document.getElementById("valentineQuestion");
+  valentineHeading.textContent = ""; // clear it first
+
+  // First: type paragraph
+  typeEffect(
+    questionText,
+    "All of this was never meant to scare you.\n\n" +
+    "It was just my way of getting your attention—\n" +
+    "of slowing you down for a moment\n" +
+    "and letting you know that you matter more than you probably realize.\n\n" +
+    "I made this because I wanted to tell you something very important!!\n\n" +
+    "And because I was hoping you’d say yes to one simple thing....",
+    null,
+    question,
+    null,
+    () => { // callback after paragraph typing finishes
+      // Now type the h2 heading
+      typeEffect(
+        valentineHeading,
+        "Will you be my Valentine? 💖",
+        null,
+        question,
+        null
+      );
+    }
+  );
+});
+
 
   /* ===============================
      NO Button Runs Away
