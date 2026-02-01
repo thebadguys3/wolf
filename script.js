@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
             step3Text.classList.remove("hidden");
             typeEffect(
               step3Text,
-              "I know it’s your sister’s wedding on that day… 💍",
+              "I know it’s your sister’s wedding on that day, so if you do say yes we will celebrate it after her wedding",
               null,
               null,
               null,
